@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     }
     &::-webkit-scrollbar-thumb {
       border-radius: 5px;
-      background-color: #4aff51;
+      background-color: #a0dba2;
     }
     &::-webkit-scrollbar-button {
       width: 0;

@@ -6,7 +6,7 @@ const Main = () => {
     <div>
     <S.Background />
     <S.Container>
-      <S.Box />
+      <S.Logout>로그아웃</S.Logout> 
     </S.Container>
     </div>
   );
