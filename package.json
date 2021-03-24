@@ -1,4 +1,9 @@
 {
+  "name": "jaksim_Client",
+  "version": "1.0.0",
+  "repository": "https://github.com/DSM-Tetris/jaksim_Client.git",
+  "author": "bgj0127 <bgj0127@gmail.com>",
+  "license": "MIT",
   "main": "index.js",
   "devDependencies": {
     "babel-loader": "^8.2.2",

@@ -3,18 +3,19 @@ import styled from 'styled-components';
 export const Background = styled.div`
   display: flex;
   position: fixed;
-  width: 100%;
+  min-width: 100%;
   height: 100vh;
   background-image: url("/src/assets/images/background.png");
   background-repeat: no-repeat;
   z-index: -100;
+  object-fit: cover;
 `
 
 export const Container = styled.div`
   display: flex;
   position: relative;
   width: 100%;
-  height: 120vh;
+  height: 200vh;
 `
 
 export const Box = styled.div`
@@ -41,13 +42,13 @@ export const Logout = styled.div`
   ::before{
     content: "";
     position: absolute;
-    width: 40px;
+    width: 700px;
     height: 150px;
-    left: -40%;
+    left: -600%;
     top: -100%;
     background: #62fc68;
-    opacity: 0.2;
     transition: all 0.45s;
+    opacity: 0.3;
   }
 
   :hover{
@@ -57,10 +58,10 @@ export const Logout = styled.div`
   :hover::before{
     content: "";
     position: absolute;
-    width: 40px;
+    width: 700px;
     height: 150px;
     left: 100%;
     top: -100%;
-    opacity: 1;
+    opacity: 0.3;
   }
 `
