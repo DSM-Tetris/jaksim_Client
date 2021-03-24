@@ -1,15 +1,11 @@
-const path = require('path')
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: './src/index.js',
-  output: {
-    // path: path.join(__dirname, '/dist'),
-    // filename: 'index_bundle.js',
-    publicPath: '/',
-  },
+
   resolve:{
     alias:{
       'react-dom': '@hot-loader/react-dom',
@@ -72,6 +68,11 @@ module.exports = {
       }
     ]
   },
+  output: {
+    path:__dirname + '/dist',
+    filename: 'index_bundle.js',
+    publicPath: '/',
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
@@ -86,4 +87,4 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
   }
-}
+};
