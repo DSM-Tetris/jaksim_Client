@@ -25,8 +25,7 @@ font-size: 3.125rem;
 
 export const AuthForm = styled.form`
   width: 70%;
-  height: 5rem;
-  margin-bottom: 50px;
+  height: 400px;
 `
 
 export const AuthSubmit = styled.button`
@@ -43,4 +42,21 @@ export const AuthSubmit = styled.button`
   :hover{
     background: #dbffed;
   }
+`
+
+export const AuthInputWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 30px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 30px;
+`
+
+export const AuthIcon = styled.img`
+  width: 30px;
+  height: 30px;
 `

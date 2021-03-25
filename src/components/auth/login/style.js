@@ -15,23 +15,6 @@ export const Inner = styled.div`
   height: 550px;
 `
 
-export const InputWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  width: 100%;
-  height: 80px;
-  margin-bottom: 30px;
-  background: rgba(255,255,255,0.4);
-  border-radius: 30px;
-`
-
-export const Icon = styled.img`
-  width: 30px;
-  height: 30px;
-`
-
 export const Input = styled.input`
   width: 80%;
   height: 100%;

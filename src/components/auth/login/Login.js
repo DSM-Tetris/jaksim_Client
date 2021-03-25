@@ -16,14 +16,14 @@ const Login = () => {
             <A.SecondChar>에 LOGIN하기</A.SecondChar>
           </A.AuthTitleContainer>
           <A.AuthForm>
-            <S.InputWrapper>
-              <S.Icon src="/src/assets/images/user.png"/>
+            <A.AuthInputWrapper>
+              <A.AuthIcon src="/src/assets/images/user.png"/>
               <S.Input type="id" placeholder="id"></S.Input>
-            </S.InputWrapper>
-            <S.InputWrapper>
-              <S.Icon src="/src/assets/images/padlock.png"/>
+            </A.AuthInputWrapper>
+            <A.AuthInputWrapper>
+              <A.AuthIcon src="/src/assets/images/padlock.png"/>
               <S.Input type="password" placeholder="password"></S.Input>
-            </S.InputWrapper>
+            </A.AuthInputWrapper>
           </A.AuthForm> 
           <S.ButtonWrapper>
             <S.Button>비밀번호 찾기</S.Button>
