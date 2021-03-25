@@ -43,6 +43,7 @@ export const Input = styled.input`
   background: none;
   ::placeholder{
     color: #4A7A62;
+    opacity: 0.5;
   }
 `
 

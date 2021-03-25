@@ -22,7 +22,7 @@ const Login = () => {
             </S.InputWrapper>
             <S.InputWrapper>
               <S.Icon src="/src/assets/images/padlock.png"/>
-              <S.Input type="id" placeholder="password"></S.Input>
+              <S.Input type="password" placeholder="password"></S.Input>
             </S.InputWrapper>
           </A.AuthForm> 
           <S.ButtonWrapper>
