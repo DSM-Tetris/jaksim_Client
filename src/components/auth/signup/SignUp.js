@@ -42,7 +42,7 @@ const SignUp = () => {
               <S.DoubleCheck>중복확인</S.DoubleCheck>
             </A.AuthInputWrapper>
           </A.AuthForm> 
-          <A.AuthSubmit>SIGNUP</A.AuthSubmit>
+          <A.AuthSubmit>REGISTER</A.AuthSubmit>
         </S.Inner>
       </A.AuthContainer>
     </div>

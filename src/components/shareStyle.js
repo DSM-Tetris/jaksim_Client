@@ -4,10 +4,11 @@ export const Background = styled.div`
   display: flex;
   position: fixed;
   min-width: 100%;
-  height: 100vh;
-  background-image: url("/src/assets/images/background.png");
-  background-repeat: no-repeat;
+  background: url("/src/assets/images/background.png") no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
   z-index: -100;
+  height: 100%;
   object-fit: cover;
 `
 

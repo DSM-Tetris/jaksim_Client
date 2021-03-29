@@ -24,6 +24,9 @@ font-size: 3.125rem;
 `
 
 export const AuthForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 70%;
   height: 400px;
 `

@@ -33,7 +33,7 @@ export const Input = styled.input`
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: -100px;
+  /* margin-bottom: -100px; */
   width: 70%;
   height: 80px;
 `
@@ -44,7 +44,7 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   width: 40%;
-  height: 100%;
+  height: 80%;
   cursor: pointer;
   border: none;
   outline: none;
