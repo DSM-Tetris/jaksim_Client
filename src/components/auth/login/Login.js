@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginInput from './LoginInput';
 import * as O from '../../shareStyle'; // 전체 공유 styled-components
 import * as A from '../authStyle';     // auth 한정 공유 styled-components
 import * as S from './style';          // loign 전용 styled-components
@@ -16,14 +17,8 @@ const Login = () => {
             <A.SecondChar>에 LOGIN하기</A.SecondChar>
           </A.AuthTitleContainer>
           <A.AuthForm>
-            <A.AuthInputWrapper>
-              <A.AuthIcon src="/src/assets/images/user.png"/>
-              <S.Input type="id" placeholder="id"></S.Input>
-            </A.AuthInputWrapper>
-            <A.AuthInputWrapper>
-              <A.AuthIcon src="/src/assets/images/padlock.png"/>
-              <S.Input type="password" placeholder="password"></S.Input>
-            </A.AuthInputWrapper>
+            <LoginInput type="id"/>
+            <LoginInput type="password"/>
           </A.AuthForm> 
           <S.ButtonWrapper>
             <S.Button>비밀번호 찾기</S.Button>
