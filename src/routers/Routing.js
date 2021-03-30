@@ -2,8 +2,8 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Temp from '../components/temp/Temp';
 import Main from '../components/main/Main';
-import Login from '../components/auth/login/Login';
-import SignUp from '../components/auth/signup/SignUp';
+import LoginContainer from '../containers/LoginContainer';
+import RegisterContainer from '../containers/RegisterContainer';
 
 const Routing = () => {
   return (
@@ -11,8 +11,8 @@ const Routing = () => {
       <Switch>
         <Route exact path="/" component={Main}/>
         <Route path="/temp" component={Temp}/>
-        <Route path="/login" component={Login}/>
-        <Route path="/signup" component={SignUp}/>
+        <Route path="/login" component={LoginContainer}/>
+        <Route path="/register" component={RegisterContainer}/>
       </Switch>
     </div>
   );
