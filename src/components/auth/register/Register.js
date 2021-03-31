@@ -14,7 +14,7 @@ const placeholder = {
   email: "이메일",
 }
 
-const Register = () => {
+const Register = ({error}) => {
   return(
     <div>
       <O.Background />
