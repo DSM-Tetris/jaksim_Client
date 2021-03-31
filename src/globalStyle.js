@@ -5,19 +5,24 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     margin: 0;
     padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
     font-family: 'paybooc-Bold', 'sans-serif';
-    &::-webkit-scrollbar {
+  }
+
+  body {
+    ::-webkit-scrollbar {
       width: 10px;
     }
-    &::-webkit-scrollbar-track {
-      border-radius: 5px;
-      background-color: rgba(0,0,0,0);
+    ::-webkit-scrollbar-track{
+      background: none;
     }
-    &::-webkit-scrollbar-thumb {
-      border-radius: 5px;
-      background-color: #a0dba2;
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: rgba(97, 97, 97,0.4);
     }
-    &::-webkit-scrollbar-button {
+    ::-webkit-scrollbar-button {
       width: 0;
       height: 0;
     }
