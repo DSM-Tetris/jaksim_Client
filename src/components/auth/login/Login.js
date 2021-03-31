@@ -5,7 +5,6 @@ import * as A from '../authStyle';     // auth 한정 공유 styled-components
 import * as S from './style';          // loign 전용 styled-components
 
 const Login = () => {
-
   return (
     <div>
       <O.Background />
@@ -17,8 +16,8 @@ const Login = () => {
             <A.SecondChar>에 LOGIN하기</A.SecondChar>
           </A.AuthTitleContainer>
           <A.AuthForm>
-            <LoginInput type="id"/>
-            <LoginInput type="password"/>
+            <LoginInput type="id" error={true} />
+            <LoginInput type="password" error={false} />
           </A.AuthForm> 
           <S.ButtonWrapper>
             <S.Button>비밀번호 찾기</S.Button>

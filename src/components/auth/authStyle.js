@@ -49,6 +49,7 @@ export const AuthSubmit = styled.button`
 
 export const AuthInputWrapper = styled.div`
   display: flex;
+  position: relative;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
@@ -57,6 +58,15 @@ export const AuthInputWrapper = styled.div`
   margin-bottom: 30px;
   background: rgba(255,255,255,0.4);
   border-radius: 30px;
+`
+
+export const AuthErrorText = styled.div`
+  visibility: ${props => props.error ? "visible" : "hidden"};
+  position: absolute;
+  left: 5%;
+  top: 100%;
+  font-size: 13px;
+  color: red;
 `
 
 export const AuthIcon = styled.img`

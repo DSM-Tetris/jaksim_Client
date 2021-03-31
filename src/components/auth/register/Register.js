@@ -26,11 +26,11 @@ const Register = () => {
             <A.SecondChar>과 함께하기</A.SecondChar>
           </A.AuthTitleContainer>
           <A.AuthForm>
-            <RegisterCheck placeholder={placeholder.id} icon={user} />
-            <RegisterInput placeholder={placeholder.password} icon={padlock} />
-            <RegisterInput placeholder={placeholder.check} icon={padlock} />
-            <RegisterInput placeholder={placeholder.nickname} icon={user} />
-            <RegisterCheck placeholder={placeholder.email} icon={user} />
+            <RegisterCheck placeholder={placeholder.id} icon={user} error={true}/>
+            <RegisterInput placeholder={placeholder.password} icon={padlock} error={false} />
+            <RegisterInput placeholder={placeholder.check} icon={padlock} error={false} />
+            <RegisterInput placeholder={placeholder.nickname} icon={user} error={true} />
+            <RegisterCheck placeholder={placeholder.email} icon={user} error={false} />
           </A.AuthForm> 
           <A.AuthSubmit>REGISTER</A.AuthSubmit>
         </S.Inner>
