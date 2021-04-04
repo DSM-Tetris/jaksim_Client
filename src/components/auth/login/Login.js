@@ -10,8 +10,6 @@ const Login = ({propsContainer, errorText, inputs}) => {
   const {idError, passwordError} = errorText;
   const {id, password} = inputs;
 
-  console.log(idError);
-
   return (
     <div>
       <O.Background />
