@@ -1,13 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux';
 import App from './App'
 import GlobalStyle from './globalStyle';
+import { ApolloProvider } from 'react-apollo';
+import ApolloClient from 'apollo-boost';
+
+const client = new ApolloClient({
+  uri: "https://countries.trevorblades.com",
+})
 
 ReactDOM.render(
-  <div>
-    <GlobalStyle />
+  <ApolloProvider client={client}>
+    <GlobalStyle/>
     <App />
-  </div>, 
+  </ApolloProvider>,
   document.getElementById("root")
 )
