@@ -37,7 +37,8 @@ export const Container = styled.div`
 export const Text = styled.span`
   z-index: 10;
   font-size: 6.25rem;
-  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  /* background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3); */
+  background: linear-gradient(124deg, #dd00f3, #dd00f3, #2b1de8, #1ddde8, #1de840, #e3e81d, #e8b71d, #e81d1d, #ff2400);
   background-size: 1000% 1000%;
   animation: ${rainbow} 18s ease infinite;
   -webkit-background-clip: text;
