@@ -11,6 +11,7 @@ const placeholder = {
   email: "이메일",
 }
 
+// 중복확인 버튼 없음
 export const RegisterPasswordInput = ({icon, type, error, input, propsContainer}) => {
   const {inputChange, enter} = propsContainer;
 
@@ -71,8 +72,9 @@ export const RegisterNicknameInput = ({icon, type, error, input, propsContainer}
   );
 };
 
+// 중복확인 버튼이 있음.
 export const RegisterIdCheck = ({icon, type, error, input, propsContainer}) => {
-  const {inputChange, enter} = propsContainer;
+  const {inputChange, checkOverlap, enter} = propsContainer;
   
   return (
     <A.AuthInputWrapper>
@@ -86,13 +88,13 @@ export const RegisterIdCheck = ({icon, type, error, input, propsContainer}) => {
         onKeyPress={enter}
       />
       <A.AuthErrorText error={error}>{errorText}</A.AuthErrorText>
-      <S.DoubleCheck>중복확인</S.DoubleCheck>
+      <S.DoubleCheck name="id" onClick={checkOverlap}>중복확인</S.DoubleCheck>
     </A.AuthInputWrapper>
   );
 };
 
 export const RegisterEmailCheck = ({icon, type, error, input, propsContainer}) => {
-  const {inputChange, enter} = propsContainer;
+  const {inputChange, checkOverlap, enter} = propsContainer;
   
   return (
     <A.AuthInputWrapper>
@@ -106,7 +108,7 @@ export const RegisterEmailCheck = ({icon, type, error, input, propsContainer}) =
         onKeyPress={enter}
       />
       <A.AuthErrorText error={error}>{errorText}</A.AuthErrorText>
-      <S.DoubleCheck>중복확인</S.DoubleCheck>
+      <S.DoubleCheck name="email" onClick={checkOverlap}>중복확인</S.DoubleCheck>
     </A.AuthInputWrapper>
   );
 };

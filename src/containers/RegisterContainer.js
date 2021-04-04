@@ -28,6 +28,12 @@ const RegisterContainer = () => {
     setInputs(nextInputs);
   }
 
+  const checkOverlap = e => {
+    // 중복확인 서버 통신
+    e.preventDefault();
+    console.log(e.target.name + "중복확인");
+  }
+
   const submit = e => {
     // 서버통신
     console.log("submit");
@@ -50,6 +56,7 @@ const RegisterContainer = () => {
     inputs: inputs,
     errorText: errorText,
     inputChange: inputChange,
+    checkOverlap: checkOverlap,
     submit: submit,
     enter: enter,
   }
