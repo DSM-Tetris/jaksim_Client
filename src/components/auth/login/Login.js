@@ -1,6 +1,7 @@
 import React from 'react';
 import { IdInput } from './LoginInput';
 import { PasswordInput } from './LoginInput';
+import { useHistory } from 'react-router-dom';
 import * as O from '../../shareStyle'; // 전체 공유 styled-components
 import * as A from '../authStyle';     // auth 한정 공유 styled-components
 import * as S from './style';          // loign 전용 styled-components
@@ -9,6 +10,8 @@ import * as S from './style';          // loign 전용 styled-components
 const Login = ({propsContainer, errorText, inputs}) => {
   const {idError, passwordError} = errorText;
   const {id, password} = inputs;
+
+  let history = useHistory();
 
   return (
     <div>
@@ -36,7 +39,7 @@ const Login = ({propsContainer, errorText, inputs}) => {
           </A.AuthForm> 
           <S.ButtonWrapper>
             <S.Button>비밀번호 찾기</S.Button>
-            <S.Button>회원가입 하기</S.Button>
+            <S.Button onClick={()=>history.push('/register')}>회원가입 하기</S.Button>
           </S.ButtonWrapper>
           <A.AuthSubmit onClick={propsContainer.submit}>LOGIN</A.AuthSubmit>
         </S.Inner>
