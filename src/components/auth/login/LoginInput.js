@@ -5,7 +5,7 @@ import * as S from './style';          // signup 전용 styled-components
 const errorText = "올바르지 않은 입력 형식입니다."
 
 export const IdInput = ({type, error, input, propsContainer}) => {
-  const {inputChange, submit, enter} = propsContainer
+  const {inputChange, enter} = propsContainer;
 
   return (
     <A.AuthInputWrapper>
@@ -16,7 +16,6 @@ export const IdInput = ({type, error, input, propsContainer}) => {
         placeholder={type}
         value={input}
         onChange={inputChange}
-        onSubmit={submit}
         onKeyPress={enter}
       />
       <A.AuthErrorText error={error}>{errorText}</A.AuthErrorText>
@@ -25,7 +24,7 @@ export const IdInput = ({type, error, input, propsContainer}) => {
 };
 
 export const PasswordInput = ({type, error, input, propsContainer}) => {
-  const {inputChange, submit, enter} = propsContainer
+  const {inputChange, enter} = propsContainer
 
   return (
     <A.AuthInputWrapper>
@@ -36,7 +35,6 @@ export const PasswordInput = ({type, error, input, propsContainer}) => {
         placeholder={type}
         value={input}
         onChange={inputChange}
-        onSubmit={submit}
         onKeyPress={enter}
       />
       <A.AuthErrorText error={error}>{errorText}</A.AuthErrorText>

@@ -38,7 +38,7 @@ const Login = ({propsContainer, errorText, inputs}) => {
             <S.Button>비밀번호 찾기</S.Button>
             <S.Button>회원가입 하기</S.Button>
           </S.ButtonWrapper>
-          <A.AuthSubmit>LOGIN</A.AuthSubmit>
+          <A.AuthSubmit onClick={propsContainer.submit}>LOGIN</A.AuthSubmit>
         </S.Inner>
       </A.AuthContainer>
     </div>
