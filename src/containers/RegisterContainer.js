@@ -4,6 +4,13 @@ import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
 
 const RegisterContainer = () => {
+  const [inputs, setInputs] = useState({
+    id: "",
+    password: "", 
+    check: "",
+    nickname: "",
+    email: "",
+  });
   const [errorText,setErrorText] = useState({
     id: false,
     password: false, 
@@ -12,10 +19,47 @@ const RegisterContainer = () => {
     email: false
   })
 
+  const inputChange = e => {
+    const {name, value} = e.target;
+    const nextInputs = {
+      ...inputs,
+      [name]: value,
+    }
+    setInputs(nextInputs);
+  }
+
+  const submit = e => {
+    // 서버통신
+    console.log("submit");
+    setErrorText({
+      id: false,
+      password: false, 
+      check: false,
+      nickname: false,
+      email: false
+    })
+  }
+
+  const enter = e => {
+    if(e.key == "Enter") {
+      submit();
+    }
+  }
+
+  let propsContainer = {
+    inputs: inputs,
+    errorText: errorText,
+    inputChange: inputChange,
+    submit: submit,
+    enter: enter,
+  }
+
   return (
     <div>
       <Register
-        error={errorText}
+        errorText={errorText}
+        inputs={inputs}
+        propsContainer={propsContainer}
       />
     </div>
   );

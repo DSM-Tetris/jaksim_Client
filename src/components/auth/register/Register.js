@@ -1,21 +1,15 @@
 import React from 'react';
-import {RegisterInput, RegisterCheck} from './RegisterInput';
+import * as R from './RegisterInput';  // RegisterInput 전부 불러옴
 import * as O from '../../shareStyle'; // 전체 공유 styled-components
 import * as A from '../authStyle';     // auth 한정 공유 styled-components
 import * as S from './style';          // signup 전용 styled-components
 import user from '/src/assets/images/user.png';
 import padlock from '/src/assets/images/padlock.png';
 
-const placeholder = {
-  id: "아이디 (영문, 숫자 6~8글자 이내)",
-  password: "비밀번호 (영문, 숫자 8~20글자 이내)",
-  check: "비밀번호 확인",
-  nickname: "닉네임 (영문, 한글, 숫자 2~6글자 이내)",
-  email: "이메일",
-}
+const Register = ({errorText, inputs, propsContainer}) => {
+  const {idError, passwordError, checkError, nicknameError, emailError} = errorText;
+  const {id, password, check, nickname, email } = inputs;
 
-const Register = ({error}) => {
-  const {id, password, check, nickname, email} = error;
   return(
     <div>
       <O.Background />
@@ -27,13 +21,43 @@ const Register = ({error}) => {
             <A.SecondChar>과 함께하기</A.SecondChar>
           </A.AuthTitleContainer>
           <A.AuthForm>
-            <RegisterCheck placeholder={placeholder.id} icon={user} error={id}/>
-            <RegisterInput placeholder={placeholder.password} icon={padlock} error={password} />
-            <RegisterInput placeholder={placeholder.check} icon={padlock} error={check} />
-            <RegisterInput placeholder={placeholder.nickname} icon={user} error={nickname} />
-            <RegisterCheck placeholder={placeholder.email} icon={user} error={email} />
+            <R.RegisterIdCheck 
+              icon={user} 
+              error={idError} 
+              type="id" 
+              input={id}
+              propsContainer={propsContainer}
+            />
+            <R.RegisterPasswordInput 
+              icon={padlock} 
+              error={passwordError} 
+              type="password" 
+              input={password} 
+              propsContainer={propsContainer}
+            />
+            <R.RegisterCheckInput 
+              icon={padlock} 
+              error={checkError} 
+              type="check" 
+              input={check} 
+              propsContainer={propsContainer}
+            />
+            <R.RegisterNicknameInput 
+              icon={user}
+              error={nicknameError} 
+              type="nickname" 
+              input={nickname} 
+              propsContainer={propsContainer}
+            />
+            <R.RegisterEmailCheck 
+              icon={user} 
+              error={emailError} 
+              type="email" 
+              input={email} 
+              propsContainer={propsContainer}
+            />
           </A.AuthForm> 
-          <A.AuthSubmit>REGISTER</A.AuthSubmit>
+          <A.AuthSubmit onClick={propsContainer.submit}>REGISTER</A.AuthSubmit>
         </S.Inner>
       </A.AuthContainer>
     </div>
