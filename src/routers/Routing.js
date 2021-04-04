@@ -4,6 +4,7 @@ import Temp from '../components/temp/Temp';
 import Main from '../components/main/Main';
 import LoginContainer from '../containers/LoginContainer';
 import RegisterContainer from '../containers/RegisterContainer';
+import NotFound from '../components/notFound/NotFound';
 
 const Routing = () => {
   return (
@@ -13,6 +14,7 @@ const Routing = () => {
         <Route path="/temp" component={Temp}/>
         <Route path="/login" component={LoginContainer}/>
         <Route path="/register" component={RegisterContainer}/>
+        <Route component={NotFound} />
       </Switch>
     </div>
   );
