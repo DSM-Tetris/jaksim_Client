@@ -6,7 +6,7 @@ import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
 
 const client = new ApolloClient({
-  uri: "https://countries.trevorblades.com",
+  uri: "http://10.156.146.199:3000/",
 })
 
 ReactDOM.render(
