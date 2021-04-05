@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Register from '../components/auth/register/Register';
-import { gql } from 'apollo-boost';
-import { Query } from 'react-apollo';
+import { CREATE_USER_MUTATION } from '../GraphQL/Mutations';
+import { useMutation } from '@apollo/client';
 
 const RegisterContainer = () => {
   const [inputs, setInputs] = useState({
@@ -13,11 +13,14 @@ const RegisterContainer = () => {
   });
   const [errorText,setErrorText] = useState({
     id: false,
-    password: false, 
+    password: false,
     check: false,
     nickname: false,
-    email: false
+    email: false,
   })
+
+  const {id, password,check,nickname,email} = inputs;
+  const [signup, {error}] = useMutation(CREATE_USER_MUTATION);
 
   const inputChange = e => {
     const {name, value} = e.target;
@@ -34,9 +37,18 @@ const RegisterContainer = () => {
     console.log(e.target.name + "중복확인");
   }
 
-  const submit = e => {
-    // 서버통신
-    console.log("submit");
+  const submit = () => {
+    signup({
+      variables: {
+        id: id,
+        password: password,
+        email: email,
+        nickname: nickname,
+      }
+    })
+    if(error){
+      console.log(error);
+    }
     setErrorText({
       id: false,
       password: false, 
@@ -62,13 +74,11 @@ const RegisterContainer = () => {
   }
 
   return (
-    <div>
-      <Register
-        errorText={errorText}
-        inputs={inputs}
-        propsContainer={propsContainer}
-      />
-    </div>
+    <Register
+      inputs={inputs}
+      errorText={errorText}
+      propsContainer={propsContainer}
+    />
   );
 };
 
