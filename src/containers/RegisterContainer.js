@@ -12,11 +12,11 @@ const RegisterContainer = () => {
     email: "",
   });
   const [errorText,setErrorText] = useState({
-    id: false,
-    password: false,
-    check: false,
-    nickname: false,
-    email: false,
+    idError: true,
+    passwordError: true,
+    checkError: true,
+    nicknameError: true,
+    emailError: true,
   })
 
   const {id, password,check,nickname,email} = inputs;
