@@ -93,7 +93,7 @@ export const RegisterIdCheck = ({icon, type, error, input, propsContainer}) => {
   );
 };
 
-export const RegisterEmailCheck = ({icon, type, error, input, propsContainer}) => {
+export const RegisterEmailSend = ({icon, type, error, input, propsContainer}) => {
   const {inputChange, checkOverlap, enter} = propsContainer;
   
   return (
@@ -108,8 +108,29 @@ export const RegisterEmailCheck = ({icon, type, error, input, propsContainer}) =
         onKeyPress={enter}
       />
       <A.AuthErrorText error={error}>{errorText}</A.AuthErrorText>
-      <S.DoubleCheck name="email" onClick={checkOverlap}>중복확인</S.DoubleCheck>
+      <S.DoubleCheck name="email" onClick={checkOverlap} >인증코드 요청</S.DoubleCheck>
     </A.AuthInputWrapper>
   );
 };
+
+export const RegisterEmailCheck = ({icon, type, error, input, propsContainer}) => {
+  const {inputChange, checkOverlap, enter} = propsContainer;
+  
+  return (
+    <A.AuthInputWrapper>
+      <A.AuthIcon src={icon} />
+      <S.Input 
+        type="text"
+        name="text"
+        placeholder="인증번호 확인하기"
+        value={input}
+        onChange={inputChange}
+        onKeyPress={enter}
+      />
+      <A.AuthErrorText error={error}>{errorText}</A.AuthErrorText>
+      <S.DoubleCheck name="email" onClick={checkOverlap} >인증코드 확인</S.DoubleCheck>
+    </A.AuthInputWrapper>
+  );
+};
+
 

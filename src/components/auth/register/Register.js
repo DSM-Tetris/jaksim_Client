@@ -49,8 +49,15 @@ const Register = ({errorText, inputs, propsContainer}) => {
               input={nickname} 
               propsContainer={propsContainer}
             />
-            <R.RegisterEmailCheck 
+            <R.RegisterEmailSend 
               icon={user} 
+              error={emailError} 
+              type="email" 
+              input={email} 
+              propsContainer={propsContainer}
+            />
+            <R.RegisterEmailCheck 
+              icon={padlock} 
               error={emailError} 
               type="email" 
               input={email} 
