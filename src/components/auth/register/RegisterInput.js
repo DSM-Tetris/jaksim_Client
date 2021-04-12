@@ -121,14 +121,14 @@ export const RegisterEmailCheck = ({icon, type, error, input, propsContainer}) =
       <A.AuthIcon src={icon} />
       <S.Input 
         type="text"
-        name="text"
+        name="code"
         placeholder="인증번호 확인하기"
         value={input}
         onChange={inputChange}
         onKeyPress={enter}
       />
       <A.AuthErrorText error={error}>{errorText}</A.AuthErrorText>
-      <S.DoubleCheck name="email" onClick={checkOverlap} >인증코드 확인</S.DoubleCheck>
+      <S.DoubleCheck name="text" onClick={checkOverlap} >인증코드 확인</S.DoubleCheck>
     </A.AuthInputWrapper>
   );
 };
