@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Register from '../components/auth/register/Register';
-import { CREATE_USER_MUTATION } from '../GraphQL/Mutations';
-import { useMutation } from '@apollo/client';
+// import { CREATE_USER_MUTATION } from '../GraphQL/Mutations';
+import { gql, useMutation } from '@apollo/client';
 
 const RegisterContainer = () => {
   const [inputs, setInputs] = useState({
@@ -10,6 +10,7 @@ const RegisterContainer = () => {
     check: "",
     nickname: "",
     email: "",
+    code: "123456",
   });
   const [errorText,setErrorText] = useState({
     idError: true,
@@ -19,8 +20,18 @@ const RegisterContainer = () => {
     emailError: true,
   })
 
-  const {id, password,check,nickname,email} = inputs;
-  const [signup, {error}] = useMutation(CREATE_USER_MUTATION);
+  const CREATE_USER_MUTATION = gql`
+    mutation Signup($username: String!, $password: String!, $nickname: String!, $email: String!, $authCode: String!) {
+      signup(data: {username: $username, password: $password, nickname: $nickname, email: $email, authCode: $authCode} ) {
+        message
+        status
+      }
+    }
+  `
+
+  const [signup] = useMutation(CREATE_USER_MUTATION);
+
+  const {id, password,check,nickname,email, code} = inputs;
 
   const inputChange = e => {
     const {name, value} = e.target;
@@ -37,18 +48,18 @@ const RegisterContainer = () => {
     console.log(e.target.name + "중복확인");
   }
 
-  const submit = () => {
+  const submit = (e) => {
+    e.preventDefault();
+    console.log("hello");
     signup({
-      variables: {
-        id: id,
-        password: password,
-        email: email,
-        nickname: nickname,
+      data: {
+        $username: id, 
+        $password: password, 
+        $nickname: nickname, 
+        $email: email,
+        $authCode: code,
       }
     })
-    if(error){
-      console.log(error);
-    }
     setErrorText({
       id: false,
       password: false, 
