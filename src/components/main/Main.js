@@ -1,13 +1,14 @@
 import React from 'react';
 import * as S from './style';
 import {Background} from '../shareStyle';
+import Header from '../header/Header';
 
 const Main = () => {
   return (
     <div>
     <Background />
     <S.Container>
-      <S.Logout>로그아웃</S.Logout> 
+      <Header />
     </S.Container>
     </div>
   );
