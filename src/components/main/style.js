@@ -26,31 +26,4 @@ export const Logout = styled.div`
   font-family: "paybooc-Medium";
   overflow: hidden;
   cursor: pointer;
-  transition: all ease-in-out;
-  
-  ::before{
-    content: "";
-    position: absolute;
-    width: 700px;
-    height: 150px;
-    left: -590%;
-    top: -100%;
-    background: #62fc68;
-    transition: all 0.45s;
-    opacity: 0.3;
-  }
-
-  :hover{
-    font-family: "paybooc-Bold";
-  }
-
-  :hover::before{
-    content: "";
-    position: absolute;
-    width: 700px;
-    height: 150px;
-    left: 100%;
-    top: -100%;
-    opacity: 0.3;
-  }
 `
