@@ -8,7 +8,7 @@ import padlock from '/src/assets/images/padlock.png';
 
 const Register = ({errorText, inputs, propsContainer}) => {
   const {idError, passwordError, checkError, nicknameError, emailError} = errorText;
-  const {id, password, check, nickname, email } = inputs;
+  const {id, password, check, nickname, email, code } = inputs;
 
   return(
     <div>
@@ -58,9 +58,9 @@ const Register = ({errorText, inputs, propsContainer}) => {
             />
             <R.RegisterEmailCheck 
               icon={padlock} 
-              error={emailError} 
-              type="email" 
-              input={email} 
+              error={false} 
+              type="text" 
+              input={code} 
               propsContainer={propsContainer}
             />
           </A.AuthForm> 
