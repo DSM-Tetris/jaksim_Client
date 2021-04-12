@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './style';
 import {Background} from '../shareStyle';
 import Header from '../header/Header';
-import CategoryItem from './CategoryItem';
+import CategoryItem from './category/CategoryItem';
 
 const Write = () => {
   return (

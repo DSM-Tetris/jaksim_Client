@@ -12,9 +12,9 @@ export const CategoryBox = styled.div`
   flex-direction: column;
   position: absolute;
   top: 20%;
+  left: 2%;
   width: 15%;
   min-height: 200px;
-  background: beige;
 `
 
 export const Home = styled.div`
