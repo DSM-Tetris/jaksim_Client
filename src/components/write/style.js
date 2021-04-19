@@ -9,19 +9,12 @@ export const Container = styled.div`
 `
 
 export const PostsView = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 40%;
   /* height: 60vh; */
   margin-top: 150px;
-  background: #f9a19f;
-`
-
-export const PostItem = styled.div`
-  width: 100%;
-  height: 550px;
-  margin-bottom: 50px;
-  background: #5f218f;
 `
 
 export const CategoryBox = styled.div`
