@@ -5,6 +5,7 @@ import Main from '../components/main/Main';
 import LoginContainer from '../containers/LoginContainer';
 import RegisterContainer from '../containers/RegisterContainer';
 import WriteContainer from '../containers/WriteContainer';
+import PostWrite from '../components/write/posts/PostWrite';
 import NotFound from '../components/notFound/NotFound';
 
 const Routing = () => {
@@ -15,6 +16,7 @@ const Routing = () => {
         <Route path="/temp" component={Temp}/>
         <Route path="/login" component={LoginContainer}/>
         <Route path="/register" component={RegisterContainer}/>
+        <Route path="/write/post" component={PostWrite} />
         <Route path='/write' component={WriteContainer} />
         <Route component={NotFound} />
       </Switch>
