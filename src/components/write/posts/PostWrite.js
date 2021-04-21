@@ -23,13 +23,16 @@ const PostWrite = () => {
   ? 
     picture = <img src={preview} style={{
       marginTop:"20px",
+      width:"100%",
       // height:"200px"
     }}></img>
   :
     picture = <div style={{
       marginTop:"20px",
-      height:"200px"
-    }}>zzdddddddddddddddddddddddddddddddddddddddddd</div>
+      width:"200px",
+      height:"200px",
+      background:"black",
+    }}></div>
   
   return (
     <div>
@@ -37,17 +40,19 @@ const PostWrite = () => {
       <S.Container>
         <Header />
         <S.WriteBox>
-          <S.Div>
-            <S.TitleInput placeholder="Input Title" />
-          </S.Div>
+          <S.TitleInput placeholder="Input Title" />
+          <S.Line />
         {picture}
-          <S.ContentsInput>
+          <S.ContentsInput placeholder="지구 어쩌구 저쩌구">
           </S.ContentsInput>
         </S.WriteBox>
         <S.ButtonBox>
           <S.QuitBtn>quit</S.QuitBtn>
           <S.AddBox>
-            <S.PictureBtn onChange={handleFile} type="file"></S.PictureBtn>
+            <S.Label htmlFor="picture-file">
+              add
+            </S.Label>
+            <S.PictureBtn id="picture-file" onChange={handleFile} type="file"></S.PictureBtn>
             <S.PostBtn>posting</S.PostBtn>
           </S.AddBox>
         </S.ButtonBox>

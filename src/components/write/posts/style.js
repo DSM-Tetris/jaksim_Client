@@ -32,15 +32,11 @@ export const WriteBox = styled.div`
   overflow-y: scroll;
 `
 
-export const Div = styled.form`
-  ::after{
-    position: absolute;
-    content: "";
+export const Line = styled.form`
     width: 18vw;
     height: 10px;
     background: #4A7A62;
     border-radius: 10px;
-  }
 `
 
 export const TitleInput = styled.input`
@@ -80,6 +76,7 @@ export const QuitBtn = styled.button`
   background: #DEFADA;
   color: #4A7A62;
   font-size: 25px;
+  font-family: "paybooc-Medium";
 `
 
 export const AddBox = styled.div`
@@ -90,6 +87,7 @@ export const AddBox = styled.div`
 `
 
 export const PictureBtn = styled.input`
+  display: none;
   width: 120px;
   height: 100%;
   border: none;
@@ -99,6 +97,20 @@ export const PictureBtn = styled.input`
   font-size: 25px;
 `
 
+export const Label = styled.label`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 100%;
+  border: none;
+  margin-right: 10px;
+  background: #DEFADA;
+  color: #4A7A62;
+  font-size: 25px;
+  font-family: "paybooc-Medium";
+`
+
 export const PostBtn = styled.button`
   width: 120px;
   height: 100%;
@@ -106,6 +118,8 @@ export const PostBtn = styled.button`
   background: #DEFADA;
   color: #4A7A62;
   font-size: 25px;
+  font-family: "paybooc-Medium";
+
 `
 
 // PostItem style
