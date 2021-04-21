@@ -45,20 +45,22 @@ export const TagBox = styled.div`
   width: 100%;
   height: 25px;
   margin: 20px 0;
-  background:#5811fa;
 `
 
 export const TagText = styled.div`
   font-size: 1.8vmin;
+  font-family: 'paybooc-Medium';
+  color: #869196;
 `
 
 export const Img = styled.img`
   background-size: cover;
 `
 
-export const PostText = styled.div`
+export const PostText = styled.pre`
   margin-top: 20px;
   font-size: 2vmin;
+  white-space: pre-wrap;
   height: 20%;
   /* background: #1fa1fa; */
   font-family: 'paybooc-Medium';
