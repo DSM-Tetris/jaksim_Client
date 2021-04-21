@@ -9,7 +9,7 @@ const PostItem = () => {
         <S.Tag>#efji</S.Tag>
       </S.TagBox>
         <S.Thumbnail />
-      <S.Text>ÀÌ»óÇÏ°Ô ÇÑ±ÛÀÌ ¾È½áÁ®¿ä</S.Text>
+      <S.Text>ì—¬ê¸°ì„œëŠ” ìž…ë ¥ì´ ìž˜ ë¼ìš”</S.Text>
     </S.PostItem>
   );
 };

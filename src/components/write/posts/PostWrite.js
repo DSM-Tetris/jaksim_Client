@@ -23,15 +23,14 @@ const PostWrite = () => {
   ? 
     picture = <img src={preview} style={{
       marginTop:"20px",
-      width:"100%",
-      // height:"200px"
+      backgroundSize:"cover"
     }}></img>
   :
     picture = <div style={{
-      marginTop:"20px",
-      width:"200px",
-      height:"200px",
-      background:"black",
+      // marginTop:"20px",
+      // width:"200px",
+      // height:"200px",
+      // background:"black",
     }}></div>
   
   return (
@@ -40,20 +39,22 @@ const PostWrite = () => {
       <S.Container>
         <Header />
         <S.WriteBox>
-          <S.TitleInput placeholder="Input Title" />
+          <S.TitleInput placeholder="제목을 입력하세요" />
           <S.Line />
         {picture}
-          <S.ContentsInput placeholder="지구 어쩌구 저쩌구">
-          </S.ContentsInput>
+          <S.ContentsInput 
+            placeholder="지구 어쩌구 저쩌구(300자 이내)" 
+            maxLength="300"
+          />
         </S.WriteBox>
         <S.ButtonBox>
-          <S.QuitBtn>quit</S.QuitBtn>
+          <S.QuitBtn>나가기</S.QuitBtn>
           <S.AddBox>
             <S.Label htmlFor="picture-file">
-              add
+              사진 추가
             </S.Label>
             <S.PictureBtn id="picture-file" onChange={handleFile} type="file"></S.PictureBtn>
-            <S.PostBtn>posting</S.PostBtn>
+            <S.PostBtn>출간하기</S.PostBtn>
           </S.AddBox>
         </S.ButtonBox>
       </S.Container>
