@@ -21,7 +21,6 @@ export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
   font-family: "paybooc-Medium";
-  overflow-y: scroll;
 `
 
 export const WriteBox = styled.div`
@@ -30,6 +29,20 @@ export const WriteBox = styled.div`
   padding: 20px;
   background: rgba(255,255,255,0.7); 
   overflow-y: scroll;
+  ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track{
+      background: none;
+    }
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: rgba(97, 97, 97,0.4);
+    }
+    ::-webkit-scrollbar-button {
+      width: 0;
+      height: 0;
+    }
 `
 
 export const Line = styled.form`
@@ -52,19 +65,23 @@ export const TitleInput = styled.input`
 export const ContentsInput = styled.textarea`
   width: 99.5%;
   resize: none;
-  height: 55%;
+  height: 30%;
   margin-top: 20px;
   border: none;
   outline: none;
   background: none;
   font-family: "paybooc-Medium";
   font-size: 25px;
-  overflow-y: scroll;
+
+  ::placeholder{
+    font-size: 25px;
+  }
 `
 
 export const ButtonBox = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 15px;
   width: 62%;
   height: 50px;
 `
@@ -75,8 +92,8 @@ export const QuitBtn = styled.button`
   border: none;
   background: #DEFADA;
   color: #4A7A62;
-  font-size: 25px;
-  font-family: "paybooc-Medium";
+  font-size: 20px;
+  font-family: "paybooc-Bold";
 `
 
 export const AddBox = styled.div`
@@ -94,7 +111,7 @@ export const PictureBtn = styled.input`
   margin-right: 10px;
   background: #DEFADA;
   color: #4A7A62;
-  font-size: 25px;
+  font-size: 20px;
 `
 
 export const Label = styled.label`
@@ -107,8 +124,8 @@ export const Label = styled.label`
   margin-right: 10px;
   background: #DEFADA;
   color: #4A7A62;
-  font-size: 25px;
-  font-family: "paybooc-Medium";
+  font-size: 20px;
+  font-family: "paybooc-Bold";
 `
 
 export const PostBtn = styled.button`
@@ -117,8 +134,8 @@ export const PostBtn = styled.button`
   border: none;
   background: #DEFADA;
   color: #4A7A62;
-  font-size: 25px;
-  font-family: "paybooc-Medium";
+  font-size: 20px;
+  font-family: "paybooc-Bold";
 
 `
 
