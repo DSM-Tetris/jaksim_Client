@@ -1,12 +1,16 @@
 import React from 'react';
+import {useHistory} from 'react-router-dom';
 import {Background} from '../../shareStyle';
 import * as S from './style';
 
 const PostDetailView = () => {
+  const history = useHistory();
+  
   return (
     <div>
       <Background />
       <S.Container>
+      <S.CloseBtn onClick={()=>history.push('/post')}/>
         <S.PostBox>
           <S.TitleText>글 개별 보기 페이지 제목</S.TitleText>
           <S.TagBox>

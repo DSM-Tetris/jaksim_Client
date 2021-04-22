@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;    
   width: 100%;
@@ -11,6 +12,7 @@ export const Container = styled.div`
 
 export const PostBox = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   position: relative;
   width: 50%;
@@ -35,6 +37,17 @@ export const PostBox = styled.div`
     width: 0;
     height: 0;
   }
+`
+
+export const CloseBtn = styled.div`
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 5.6%;
+  left: 78%;
+  background-image: url("/src/assets/images/close.png");
+  cursor: pointer;
+  z-index: 100;
 `
 
 export const TitleText = styled.div`
