@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import * as S from './style';
-import {Background} from '../../shareStyle';
+import { Background } from '../../shareStyle';
 import Header from '../../header/Header';
 
 const PostWrite = () => {
@@ -23,6 +23,7 @@ const PostWrite = () => {
   ? 
     picture = <img src={preview} style={{
       marginTop:"20px",
+      width:"100%",
       backgroundSize:"cover"
     }}></img>
   :
@@ -54,7 +55,7 @@ const PostWrite = () => {
               사진 추가
             </S.Label>
             <S.PictureBtn id="picture-file" onChange={handleFile} type="file"></S.PictureBtn>
-            <S.PostBtn>출간하기</S.PostBtn>
+            <S.PostBtn onClick={()=>alert("성공적으로 작성했습니다.")}>출간하기</S.PostBtn>
           </S.AddBox>
         </S.ButtonBox>
       </S.Container>
