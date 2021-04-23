@@ -6,6 +6,7 @@ import LoginContainer from '../containers/LoginContainer';
 import RegisterContainer from '../containers/RegisterContainer';
 import WriteDetailView from '../components/write/postDetailView/PostDetailView';
 import WriteContainer from '../containers/WriteContainer';
+import WriteDetail from '../components/write/writeDetail/WriteDetail';
 import PostWrite from '../components/write/posts/PostWrite';
 import NotFound from '../components/notFound/NotFound';
 
@@ -20,6 +21,7 @@ const Routing = () => {
         <Route exact path='/post' component={WriteContainer} />
         <Route path="/post/:id" component={WriteDetailView} />
         <Route path="/write" component={PostWrite} />
+        <Route path="/hello" component={WriteDetail} />
         <Route component={NotFound} />
       </Switch>
     </div>
