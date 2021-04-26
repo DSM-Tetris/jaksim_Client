@@ -24,6 +24,14 @@ export const MainText = styled.div`
   font-size: 30px;
 `
 
+export const Line = styled.form`
+  width: 18vw;
+  height: 8px;
+  margin-top: 5px;
+  background: #DFFADA;
+  border-radius: 10px;
+`
+
 export const AddCategoryBox = styled.div`
   display: flex;
   padding: 5px;
@@ -45,6 +53,10 @@ export const CategoryInput = styled.input`
   font-size: 20px;
   box-sizing: border-box;
   font-family: 'paybooc-Bold';
+
+  ::placeholder{
+    color: #ADB5BD;
+  }
 `
 
 export const AddBtn = styled.button`
@@ -71,14 +83,21 @@ export const SelectCategoryBox = styled.div`
   box-shadow: 1px 1px 4px rgba(0,0,0,0.16);
 `
 
-export const AddTagBox = styled.div`
+export const AddTagBox = styled.textarea`
+  box-sizing: border-box;
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+  padding: 10px;
   width: 100%;
   height: 18%;
   background: white;
+  outline: none;
+  border: none;
   box-shadow: 1px 1px 4px rgba(0,0,0,0.16);
+  font-family: 'paybooc-Bold';
+  font-size: 20px;
+  resize: none;
 `
