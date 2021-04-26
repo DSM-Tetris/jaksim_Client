@@ -17,13 +17,17 @@ const WriteDetail = () => {
           </S.AddCategoryBox>
           <S.SelectCategoryBox>
             <CategoryItem />
+            <CategoryItem />
+            <CategoryItem />
+            <CategoryItem />
           </S.SelectCategoryBox>
           <S.MainText>태그 작성하기</S.MainText>
           <S.Line />
-          <S.AddTagBox>
-            
-          </S.AddTagBox>
+          <S.AddTagBox />
         </S.SelectBox>
+        <S.ButtonBox>
+          <S.Button>출간하기</S.Button>
+        </S.ButtonBox>
       </S.Container>
     </div>
   );

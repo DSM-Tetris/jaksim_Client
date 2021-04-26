@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   position: relative;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -74,7 +75,8 @@ export const AddBtn = styled.button`
 export const SelectCategoryBox = styled.div`
   display: flex;
   position: relative;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: 60%;
@@ -100,4 +102,24 @@ export const AddTagBox = styled.textarea`
   font-family: 'paybooc-Bold';
   font-size: 20px;
   resize: none;
+`
+
+export const ButtonBox = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 37.2%;
+  height: 50px;
+  margin-top: 5px;
+  box-sizing: border-box;
+`
+
+export const Button = styled.button`
+  width: 120px;
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: #DEFADA;
+  color: #4A7A62;
+  font-size: 20px;
+  font-family: 'paybooc-Bold';
 `
