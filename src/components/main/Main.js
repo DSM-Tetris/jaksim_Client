@@ -6,10 +6,10 @@ import Header from '../header/Header';
 const Main = () => {
   return (
     <div>
-    <Background />
-    <S.Container>
-      <Header />
-    </S.Container>
+      <Background />
+      <S.Container>
+        <Header />
+      </S.Container>
     </div>
   );
 };
