@@ -95,3 +95,13 @@ export const CloseBtn = styled.div`
   cursor: pointer;
   z-index: 100;
 `
+
+export const ItemContainer = styled.div`
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  height: 60px;
+  /* background-color: cornflowerblue; */
+`
