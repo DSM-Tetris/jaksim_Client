@@ -7,8 +7,8 @@ import user from '/src/assets/images/user.png';
 import padlock from '/src/assets/images/padlock.png';
 
 const Register = ({errorText, inputs, propsContainer}) => {
-  const {idError, passwordError, checkError, nicknameError, emailError} = errorText;
-  const {id, password, check, nickname, email, code } = inputs;
+  const {usernameError, passwordError, checkError, nicknameError, emailError} = errorText;
+  const {username, password, check, nickname, email, authCode } = inputs;
 
   return(
     <div>
@@ -23,9 +23,9 @@ const Register = ({errorText, inputs, propsContainer}) => {
           <A.AuthForm>
             <R.RegisterIdCheck 
               icon={user} 
-              error={idError} 
-              type="id" 
-              input={id}
+              error={usernameError} 
+              type="username" 
+              input={username}
               propsContainer={propsContainer}
             />
             <R.RegisterPasswordInput 
@@ -59,8 +59,8 @@ const Register = ({errorText, inputs, propsContainer}) => {
             <R.RegisterEmailCheck 
               icon={padlock} 
               error={false} 
-              type="text" 
-              input={code} 
+              type="authCode" 
+              input={authCode} 
               propsContainer={propsContainer}
             />
           </A.AuthForm> 

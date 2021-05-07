@@ -1,51 +1,45 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Register from '../components/auth/register/Register';
 // import { CREATE_USER_MUTATION } from '../GraphQL/Mutations';
 import { gql, useMutation } from '@apollo/client';
 
 const RegisterContainer = () => {
   const [inputs, setInputs] = useState({
-    id: "",
+    username: "",
     password: "", 
     check: "",
     nickname: "",
     email: "",
-    code: "123456",
+    authCode: "",
   });
   const [errorText,setErrorText] = useState({
-    idError: false,
+    usernameError: false,
     passwordError: false,
     checkError: false,
     nicknameError: false,
     emailError: false,
-  })
+  });
+  const [datas, setDatas] = useState({});
 
   const CREATE_USER_MUTATION = gql`
     mutation Signup($username: String!, $password: String!, $nickname: String!, $email: String!, $authCode: String!) {
-      signup(username: $username, password: $password, nickname: $nickname, email: $email, authCode: $authCode ) {
-        data {
-          username
-          password
-          nickname
-          email
-          authCode
-        }
+      signup( data: {username: $username, password: $password, email: $email, nickname: $nickname, authCode: $authCode }) {
+        __typename
       }
     }
   `
 
   const EMAIL = gql`
-    mutation SendVerificationEmail($emailCheck: String!) {
+    mutation SendVerificationEmail($email: String!) {
       sendVerificationEmail(email: $email) {
-        email
+        __typename
       }
     }
   `
 
   const [signup, {data}] = useMutation(CREATE_USER_MUTATION);
-  const [sendVerificationEmail] = useMutation(EMAIL);
-
-  const {id, password,check,nickname,email, code} = inputs;
+  // const [sendVerificationEmail, {emailData, emailError}] = useMutation(EMAIL);
+  const {username, password,check,nickname,email, authCode} = inputs;
 
   const inputChange = e => {
     const {name, value} = e.target;
@@ -59,27 +53,26 @@ const RegisterContainer = () => {
   const checkOverlap = e => {
     // 중복확인 서버 통신
     e.preventDefault();
-    sendVerificationEmail({variables: {email}})
-    console.log(e.target.name + "중복확인");
+    sendVerificationEmail({variables:{email}})
   }
 
   const submit = (e) => {
     e.preventDefault();
-    console.log("hello");
     signup({variables: {
-      username: id,
-      password: password,
-      email: email,
-      authCode: code,
-      nickname: nickname
-    }})
+      username,
+      password,
+      email,
+      authCode,
+      nickname
+    }});
+
     setErrorText({
-      id: false,
+      username: false,
       password: false, 
       check: false,
       nickname: false,
       email: false
-    })
+    });
   }
 
   const enter = e => {
