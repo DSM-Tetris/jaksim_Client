@@ -113,33 +113,34 @@ export const BatteryInner = styled.div`
 export const Test = styled.div`
   position: absolute;
   left: 0;
-  /* top: -200px; */
+  top: ${props => props.percent}%;
   width: 100%;
   height: 700px;
   background-size: 500px;
   background-position-x: 0;
   background-image: url("/src/assets/images/asdf.png"); 
-  /* transition: all 5s ease-in; */
-  /* opacity: 0.8;  */
+  transition: all 0.8s ease-in-out;
   animation: ${wave} 20s linear infinite;
 `
 
 export const Tet = styled.img`
   position: absolute;
   left: 0;
-  /* top: -200px; */
+  top: ${props => props.percent}%;
   width: 100%;
   height: 700px;
   background-size: 500px;
   background-position-x: 400px;
   background-image: url("/src/assets/images/asdf.png"); 
   animation: ${wave2} 18s linear infinite;
+  transition: all 0.8s ease-in-out;
   opacity: 0.6;
   z-index: 100;
 `
 
 export const VPer = styled.span`
   position: absolute;
+  /* top: 45%; */
   top: 45%;
   left: 45%;
   font-size: 30px;
