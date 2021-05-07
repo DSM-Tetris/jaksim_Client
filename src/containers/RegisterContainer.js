@@ -13,23 +13,37 @@ const RegisterContainer = () => {
     code: "123456",
   });
   const [errorText,setErrorText] = useState({
-    idError: true,
-    passwordError: true,
-    checkError: true,
-    nicknameError: true,
-    emailError: true,
+    idError: false,
+    passwordError: false,
+    checkError: false,
+    nicknameError: false,
+    emailError: false,
   })
 
   const CREATE_USER_MUTATION = gql`
     mutation Signup($username: String!, $password: String!, $nickname: String!, $email: String!, $authCode: String!) {
-      signup(data: {username: $username, password: $password, nickname: $nickname, email: $email, authCode: $authCode} ) {
-        message
-        status
+      signup(username: $username, password: $password, nickname: $nickname, email: $email, authCode: $authCode ) {
+        data {
+          username
+          password
+          nickname
+          email
+          authCode
+        }
       }
     }
   `
 
-  const [signup] = useMutation(CREATE_USER_MUTATION);
+  const EMAIL = gql`
+    mutation SendVerificationEmail($emailCheck: String!) {
+      sendVerificationEmail(email: $email) {
+        email
+      }
+    }
+  `
+
+  const [signup, {data}] = useMutation(CREATE_USER_MUTATION);
+  const [sendVerificationEmail] = useMutation(EMAIL);
 
   const {id, password,check,nickname,email, code} = inputs;
 
@@ -45,21 +59,20 @@ const RegisterContainer = () => {
   const checkOverlap = e => {
     // 중복확인 서버 통신
     e.preventDefault();
+    sendVerificationEmail({variables: {email}})
     console.log(e.target.name + "중복확인");
   }
 
   const submit = (e) => {
     e.preventDefault();
     console.log("hello");
-    signup({
-      data: {
-        $username: id, 
-        $password: password, 
-        $nickname: nickname, 
-        $email: email,
-        $authCode: code,
-      }
-    })
+    signup({variables: {
+      username: id,
+      password: password,
+      email: email,
+      authCode: code,
+      nickname: nickname
+    }})
     setErrorText({
       id: false,
       password: false, 

@@ -133,9 +133,18 @@ export const Tet = styled.img`
   background-size: 500px;
   background-position-x: 400px;
   background-image: url("/src/assets/images/asdf.png"); 
-  animation: ${wave2} 20s linear infinite;
+  animation: ${wave2} 18s linear infinite;
   opacity: 0.6;
   z-index: 100;
+`
+
+export const VPer = styled.span`
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  font-size: 30px;
+  color: black;
+  z-index: 400;
 `
 
 export const PostBtn = styled.button`
@@ -146,5 +155,12 @@ export const PostBtn = styled.button`
   outline: none;
   font-size: 35px;
   font-family: 'paybooc-Medium';
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  :hover {
+    background-color: #92d989;
+    color: white;
+  }
 `
 

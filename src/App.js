@@ -7,7 +7,7 @@ import GlobalStyle from './globalStyle';
 import { ApolloProvider } from '@apollo/client';
 
 const link = from([
-  new HttpLink({ uri : "http://10.156.146.199:3000" }),
+  new HttpLink({ uri : "http://3.36.234.120:80" }),
 ]);
 
 const client = new ApolloClient({
