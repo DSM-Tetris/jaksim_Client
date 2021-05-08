@@ -39,7 +39,7 @@ export const RegisterCheckInput = ({icon, type, error, input, propsContainer}) =
     <A.AuthInputWrapper>
       <A.AuthIcon src={icon} errorMsg={errorText}/>
       <S.Input 
-        type={type}
+        type="password"
         name={type}
         placeholder={placeholder.check}
         value={input}
