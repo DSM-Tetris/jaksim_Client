@@ -5,7 +5,7 @@ import Main from '../components/main/Main';
 import LoginContainer from '../containers/LoginContainer';
 import RegisterContainer from '../containers/RegisterContainer';
 import WriteDetailView from '../components/write/postDetailView/PostDetailView';
-import WriteContainer from '../containers/WriteContainer';
+import WriteContainer from '../containers/PostContainer';
 import WriteDetail from '../components/write/writeDetail/WriteDetail';
 import PostWrite from '../components/write/posts/PostWrite';
 import CategorySetting from '../components/write/category/CategorySetting';
