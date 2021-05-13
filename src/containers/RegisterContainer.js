@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import {useHistory} from 'react-router-dom';
 import Register from '../components/auth/register/Register';
 import * as S from '../lib/register/SignupType';
 import { CREATE_USER_MUTATION, EMAIL } from '../GraphQL/Mutations';
@@ -13,31 +14,27 @@ const RegisterContainer = () => {
     email: "",
     authCode: "",
   });
-  const [errorText,setErrorText] = useState({
-    usernameError: false,
-    passwordError: false,
-    checkError: false,
-    nicknameError: false,
-    emailError: false,
-  });
+  const [errorText,setErrorText] = useState(false);
+  const history = useHistory();
 
-  const [signup, {data :signupData}] = useMutation(CREATE_USER_MUTATION, {
+  const [signup] = useMutation(CREATE_USER_MUTATION, {
     onCompleted: (signupData) => {
       let type = signupData.signup.__typename;
-      if(type === "SuccessSignup") S.successSignup();
-      if(type === "AlreadyUserExists") S.alreadyUserExists();
-      if(type === "BadRequest") S.badRequest();
-      if(type === "VerifyEmailFailed") S.verifyEmailFailed();
+      if(type === "SuccessSignup") {
+        S.successSignup(setErrorText);
+        history.push('/login');
+      }
+      if(type === "AlreadyUserExists") S.alreadyUserExists(setErrorText);
+      if(type === "BadRequest") S.badRequest(setErrorText);
+      if(type === "VerifyEmailFailed") S.verifyEmailFailed(setErrorText);
     }
   });
-  const [sendVerificationEmail, {data: emailData}] = useMutation(EMAIL, {
+
+  const [sendVerificationEmail] = useMutation(EMAIL, {
     onCompleted: (emailData) => {
       let type = emailData.sendVerificationEmail.__typename;
-      if(type === "BadRequest") setErrorText({emailError: true});
-      if(type === "SendEmailSuccess") {
-        setErrorText({emailError: false});
-
-      }
+      if(type === "BadRequest") {alert("이메일 입력 형식을 확인해주세요.")}
+      if(type === "SendEmailSuccess") {alert("성공적으로 인증코드를 전송했습니다.")}
     }
   }); 
   
@@ -61,21 +58,17 @@ const RegisterContainer = () => {
   const submit = (e) => {
     e.preventDefault();
     // 요청
-    signup({variables: {
-      username,
-      password,
-      email,
-      authCode,
-      nickname
-    }});
-
-    setErrorText({
-      username: false,
-      password: false, 
-      check: false,
-      nickname: false,
-      email: false
-    });
+    if(password === check) {
+      signup({variables: {
+        username,
+        password,
+        email,
+        authCode,
+        nickname
+      }});
+    } else {
+      alert("비밀번호가 일치하지 않습니다.");
+    }
   }
 
   const enter = e => {
