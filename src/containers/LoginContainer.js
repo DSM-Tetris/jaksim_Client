@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+import {useHistory} from 'react-router-dom';
+import { useMutation } from '@apollo/client';
 import Login from '../components/auth/login/Login';
+import * as S from '../lib/login/LoginType';
+import { LOGIN } from '../GraphQL/Mutations';
 
 const LoginContainer = () => {
   const [inputs, setInputs] = useState({
@@ -10,6 +14,22 @@ const LoginContainer = () => {
     idError: false,
     passwordError: false,
   });
+  const history = useHistory();
+
+  const [login] = useMutation(LOGIN, {
+    onCompleted: (loginData) => {
+      const type = loginData.login;
+      console.log(type);
+      if(type.__typename === "Login") {
+        S.login(type);
+        history.push('/');
+      }
+      if(type.__typename === "InvalidLoginInfo") S.invalidLoginInfo();
+      if(type.__typename === "BadRequest") S.badRequest();
+    }
+  });
+
+  const {id, password} = inputs;
 
   const inputChange = e => {
     const {name, value} = e.target;
@@ -22,6 +42,11 @@ const LoginContainer = () => {
 
   const submit = e => {
     // 서버통신
+    login({variables: {
+      username: id,
+      password
+    }
+    })
     setErrorText({
       id: true,
       password: true,
