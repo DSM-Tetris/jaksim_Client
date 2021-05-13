@@ -21,7 +21,7 @@ const Main = () => {
       else if(percent <= 49) p = 0;
       else if(percent <= 59) p = -10;
       else if(percent <= 69) p = -20;
-      else if(percent <= 79) p = -30;
+      else if(percent <= 79) p = -20;
       else if(percent <= 89) p = -40;
       else if(percent <= 99) p = -50;
       else p = -60;

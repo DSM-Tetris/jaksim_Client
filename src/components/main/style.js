@@ -118,7 +118,7 @@ export const Test = styled.div`
   height: 700px;
   background-size: 500px;
   background-position-x: 0;
-  background-image: url("/src/assets/images/asdf.png"); 
+  background-image: url("/src/assets/images/asd.png"); 
   transition: all 0.8s ease-in-out;
   animation: ${wave} 20s linear infinite;
 `
@@ -131,7 +131,7 @@ export const Tet = styled.img`
   height: 700px;
   background-size: 500px;
   background-position-x: 400px;
-  background-image: url("/src/assets/images/asdf.png"); 
+  background-image: url("/src/assets/images/asd.png"); 
   animation: ${wave2} 18s linear infinite;
   transition: all 0.8s ease-in-out;
   opacity: 0.6;
