@@ -15,6 +15,7 @@ export const PostItem = styled.div`
 export const Container = styled.div`
   display: flex;
   position: relative;
+  float: left;
   flex-direction: column;
   justify-content: center;
   align-items: center;

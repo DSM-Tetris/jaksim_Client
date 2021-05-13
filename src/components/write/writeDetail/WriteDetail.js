@@ -1,13 +1,11 @@
 import React from 'react';
-import {Background} from '../../shareStyle';
 import CategoryItem from './CategoryItem';
 import * as S from './style';
 
-const WriteDetail = () => {
+const WriteDetail = ({write}) => {
   return (
     <div>
-      <Background />
-      <S.Container>
+      <S.Container write={write}>
         <S.SelectBox>
           <S.MainText>카테고리 설정하기</S.MainText>
           <S.Line />
@@ -26,6 +24,7 @@ const WriteDetail = () => {
           <S.AddTagBox />
         </S.SelectBox>
         <S.ButtonBox>
+          <S.Button onClick={()=>{console.log("tlqkf")}}>글 수정</S.Button>
           <S.Button>출간하기</S.Button>
         </S.ButtonBox>
       </S.Container>

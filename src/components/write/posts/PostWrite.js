@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import * as S from './style';
 import { Background } from '../../shareStyle';
 import Header from '../../header/Header';
+import WriteDetail from '../writeDetail/WriteDetail';
 
 const PostWrite = () => {
   const [file,setFile] = useState('');
   const [preview,setPreview] = useState('');
+  const [write, setWrite] = useState(false);
 
   const handleFile = e => {
     e.preventDefault();
@@ -35,7 +37,7 @@ const PostWrite = () => {
     }}></div>
   
   return (
-    <div>
+    <div >
       <Background />
       <S.Container>
         <Header />
@@ -55,10 +57,11 @@ const PostWrite = () => {
               사진 추가
             </S.Label>
             <S.PictureBtn id="picture-file" onChange={handleFile} type="file"></S.PictureBtn>
-            <S.PostBtn onClick={()=>alert("성공적으로 작성했습니다.")}>출간하기</S.PostBtn>
+            <S.PostBtn onClick={()=>setWrite(true)}>출간하기</S.PostBtn>
           </S.AddBox>
         </S.ButtonBox>
       </S.Container>
+      <WriteDetail write={write}/>
     </div>
   );
 };

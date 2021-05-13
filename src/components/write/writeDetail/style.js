@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  visibility: ${props => props.write ? "visible" : "hidden"};
   display: flex;
-  position: relative;
+  position: absolute;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
+  background: url('/src/assets/images/background.png') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
 `
 
 export const SelectBox = styled.div`
@@ -119,6 +123,7 @@ export const Button = styled.button`
   outline: none;
   border: none;
   background-color: #DEFADA;
+  margin-left: 10px; 
   color: #4A7A62;
   font-size: 20px;
   font-family: 'paybooc-Bold';

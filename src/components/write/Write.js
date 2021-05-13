@@ -16,7 +16,6 @@ const Write = () => {
           <PostItem />
           <PostItem />
           <PostItem />
-
         </S.PostsView>
         <S.CategoryBox>
           <S.Home>홈</S.Home>
