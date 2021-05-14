@@ -19,7 +19,6 @@ const LoginContainer = () => {
   const [login] = useMutation(LOGIN, {
     onCompleted: (loginData) => {
       const type = loginData.login;
-      console.log(type);
       if(type.__typename === "Login") {
         S.login(type);
         history.push('/');
