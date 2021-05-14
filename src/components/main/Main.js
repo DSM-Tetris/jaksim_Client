@@ -6,7 +6,7 @@ import Header from '../header/Header';
 
 const Main = () => {
   const [isPost, setIsPost] = useState(false);
-  const [percent, setPercent] = useState(75);
+  const [percent, setPercent] = useState(40);
   const [convertPercent, setConvertPercent] = useState(0);
 
   const history = useHistory();
@@ -14,17 +14,17 @@ const Main = () => {
   useEffect(()=>{
     const convertToPosition = (percent) => {
       let p = percent;
-      if(percent <= 9) p = 35;
-      else if(percent <= 19) p = 22;
-      else if(percent <= 29) p = 15;
-      else if(percent <= 39) p = 10;
-      else if(percent <= 49) p = 0;
-      else if(percent <= 59) p = -10;
-      else if(percent <= 69) p = -20;
-      else if(percent <= 79) p = -20;
-      else if(percent <= 89) p = -40;
-      else if(percent <= 99) p = -50;
-      else p = -60;
+      if(percent <= 9) p = 66;
+      else if(percent <= 19) p = 60;
+      else if(percent <= 29) p = 55;
+      else if(percent <= 39) p = 44;
+      else if(percent <= 49) p = 33;
+      else if(percent <= 59) p = 22;
+      else if(percent <= 69) p = 6;
+      else if(percent <= 79) p = -5;
+      else if(percent <= 89) p = -10;
+      else if(percent <= 99) p = -15;
+      else p = -20;
 
       setConvertPercent(p);
     }
@@ -44,7 +44,6 @@ const Main = () => {
             <S.TextBox>
               <S.Write>{isPost ? "NOW" : "NOT"}</S.Write>
               <S.Green>GREEN</S.Green>
-              <button onClick={()=>setPercent(percent + 5)}></button>
             </S.TextBox>
             <S.BatteryBox>
               <S.BatteryOutter>
