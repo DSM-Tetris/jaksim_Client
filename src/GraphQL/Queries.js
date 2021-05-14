@@ -4,23 +4,26 @@ export const GET_POSTS = gql`
   query GetPosts($page: Float!, $categoryId: Int) {
     getPosts(data: {page: $page, categoryId: $categoryId}) {
       ... on GetPosts {
+        __typename
         posts {
-          __typename,
-          id,
-          title,
-          contentPreview,
-          image,
+          title
+          contentPreview
+          image
           tags {
             tagName
           }
         }
       }
       ... on Unauthorized {
-        __typename,
+        __typename
         message
       }
-      ... on NotFoundPost {
-        __typename,
+      ... on BadRequest {
+        __typename
+        message
+      }
+      ... on NotFoundAnyPost {
+        __typename
         message
       }
     }
