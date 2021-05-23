@@ -61,7 +61,7 @@ export const DoubleCheck = styled.button`
   color: #4A7A62;
   border-radius: 30px;
   opacity: 0.7;
-  font-size: 20px;
+  font-size: 15px;
   font-family: "paybooc-Bold";
   cursor: pointer;
 `

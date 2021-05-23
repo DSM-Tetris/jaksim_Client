@@ -55,7 +55,7 @@ export const AuthInputWrapper = styled.div`
   flex-direction: row;
   width: 100%;
   height: 60px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   background: rgba(255,255,255,0.4);
   border-radius: 30px;
 `
