@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useQuery} from '@apollo/client';
 import Write from '../components/write/Write';
 import {GET_POSTS} from '../GraphQL/Queries';

@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost';
 
 export const GET_POSTS = gql`
-  query GetPosts($page: Float!, $categoryId: Int) {
+  query GetPosts($page: Int!, $categoryId: Int) {
     getPosts(data: {page: $page, categoryId: $categoryId}) {
       ... on GetPosts {
         __typename
@@ -15,7 +15,7 @@ export const GET_POSTS = gql`
         }
       }
       ... on Unauthorized {
-        __typename
+        __typename  
         message
       }
       ... on BadRequest {
