@@ -2,7 +2,6 @@ import React from 'react';
 import * as S from './style';
 import {Background} from '../shareStyle';
 import Header from '../header/Header';
-import CategoryItem from './category/CategoryItem';
 import PostItem from './posts/PostItem';
 
 const Write = () => {
@@ -19,11 +18,19 @@ const Write = () => {
         </S.PostsView>
         <S.CategoryBox>
           <S.Home>홈</S.Home>
-          <S.Category>카테고리</S.Category>
-          <CategoryItem>전체보기(10)</CategoryItem>
-          <S.CategorySetting>카테고리 관리하기</S.CategorySetting>
+          <S.Category>글 작성</S.Category>
         </S.CategoryBox>
         <S.TagBox>
+          <span>dd</span>
+          <span>dd</span>
+          <span>dd</span>
+          <span>dd</span>
+          <span>dd</span>
+          <span>dd</span>
+          <span>dd</span>
+          <span>dd</span>
+          <span>dd</span>
+          <span>dd</span>
         </S.TagBox>
       </S.Container>
     </div>

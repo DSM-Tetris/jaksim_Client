@@ -104,15 +104,4 @@ export const TagBox = styled.div`
   border: 1px solid #EEF1F3;
   border-radius: 10px;
   background: rgba(255,255,255,0.7);
-
-  ::after{
-    content:"오늘의 일지 작성하기";
-    position: absolute;
-    top: 103%;
-    width: 100%;
-    height: 4vh;
-    text-align: center;
-    font-size: 1.1vw;
-    color: #4A7A62;
-  }
 `
