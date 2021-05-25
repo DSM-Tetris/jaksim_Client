@@ -57,6 +57,10 @@ const Main = () => {
           </S.TopInner>
           <S.PostBtn onClick={()=>history.push('/post')}>전체 글 보기</S.PostBtn>
         </S.TopBox>
+        <S.BottomBox>
+          <S.TextImg />
+          <S.Tree />
+        </S.BottomBox>
       </S.Container>
     </div>
   );

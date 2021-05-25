@@ -1,19 +1,19 @@
 import styled, { keyframes } from 'styled-components';
 
 const wave = keyframes`
-  0%{
+  from{
     background-position-x: 0px;
   }
-  100%{
+  to{
     background-position-x: 1000px;
   }
 `;
 
 const wave2 = keyframes`
-  0%{
+  from{
     background-position-x: 400px;
   }
-  100%{
+  to{
     background-position-x: 1400px;
   }
 `;
@@ -21,6 +21,8 @@ const wave2 = keyframes`
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   width: 100%;
   height: 200vh;
@@ -34,6 +36,27 @@ export const TopBox = styled.div`
   height: 90vh;
   margin-top: 100px;
   /* background-color: wheat; */
+`
+
+export const BottomBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 96vh;
+`
+
+export const TextImg = styled.div`
+  width: 540px;
+  height: 450px;
+  margin-left: 300px;
+  background-image: url("/src/assets/images/mainText.png");
+`
+
+export const Tree = styled.div`
+  width: 886px;
+  height: 654px;
+  background-color: #a78af7;
 `
 
 export const TodayTag = styled.div`
@@ -117,6 +140,7 @@ export const Test = styled.div`
   width: 100%;
   height: 700px;
   border: none;
+  outline: none;
   background-size: 500px;
   background-position-x: 0;
   background-image: url("/src/assets/images/third.png"); 
@@ -131,6 +155,7 @@ export const Tet = styled.div`
   width: 100%;
   height: 700px;
   border: none;
+  outline: none;
   background-size: 500px;
   background-position-x: 400px;
   background-image: url("/src/assets/images/forth.png"); 
