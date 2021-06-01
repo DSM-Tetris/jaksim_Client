@@ -28,7 +28,7 @@ export const PasswordInput = ({type, error, input, propsContainer}) => {
 
   return (
     <A.AuthInputWrapper>
-      <A.AuthIcon src="/src/assets/images/user.png"/>
+      <A.AuthIcon src="/src/assets/images/padlock.png"/>
       <S.Input 
         type={type}
         name={type}
