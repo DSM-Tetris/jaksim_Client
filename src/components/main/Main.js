@@ -12,6 +12,10 @@ const Main = () => {
   const history = useHistory();
 
   useEffect(()=>{
+    const token = localStorage.getItem("token");
+    if(!token){
+      history.push("/login");
+    }
     const convertToPosition = (percent) => {
       let p = percent;
       if(percent <= 9) p = 66;

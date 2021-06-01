@@ -56,7 +56,7 @@ export const TextImg = styled.div`
 export const Tree = styled.div`
   width: 886px;
   height: 654px;
-  background-color: #a78af7;
+  background-image: url("/src/assets/images/mainTree.png");
 `
 
 export const TodayTag = styled.div`
