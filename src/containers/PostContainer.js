@@ -8,7 +8,7 @@ const PostContainer = () => {
   const token = localStorage.getItem("token");
 
   const {loading, error, data} = useQuery(GET_POSTS, {
-    variables: {page: 1},
+    variables: {page: 1, categoryId: null},
     context: {
       headers: {
         authorization: token ? `Bearer ${token}` : ""
@@ -17,15 +17,13 @@ const PostContainer = () => {
   });
 
   useEffect(()=>{
-    if(data && data.getPosts) {
-      setA(data.getPosts.message);
+    if(data) {
+      setA(data.getPosts.__typename);
     }
   },[data]);
 
-  console.log(a);
-
   return (
-    <Write />
+    <Write data={data && data.getPosts}/>
   );
 };
 

@@ -147,20 +147,23 @@ export const Title = styled.div`
 `
 
 export const TagBox = styled.div`
+  display: flex;
+  justify-content: start;
   width: 100%;
   height: 15px;
   margin: 10px 0;
   font-size: 15px;
 `
 
-export const Tag = styled.p`
-  margin: 0;
+export const Tag = styled.div`
+  display: flex;
+  margin-right: 10px;
 `
 
 export const Thumbnail = styled.div`
   width: 100%;
   height: 80%;
-  background-image: url("/src/assets/images/team_logo.png");
+  background-image: ${props => props.image ? `url(${props.image})`:'url("/src/assets/images/jok.jpg")'};
   background-repeat: no-repeat;
   background-size: contain;
   margin-bottom: 10px;

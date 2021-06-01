@@ -12,12 +12,12 @@ const PostDetailView = () => {
       <S.Container>
       <S.CloseBtn onClick={()=>history.push('/post')}/>
         <S.PostBox>
-          <S.TitleText>글 개별 보기 페이지 제목</S.TitleText>
+          <S.TitleText>제목관련</S.TitleText>
           <S.TagBox>
-            <S.TagText>#어쩌구 #저쩌구 #환경뭐시기</S.TagText>
+            <S.TagText>태그관련</S.TagText>
           </S.TagBox>
-          <S.Img src="/src/assets/images/fox.png"/>
-          <S.PostText>귀엽다</S.PostText>
+          <S.Img src="/src/assets/images/jok.jpg"/>
+          <S.PostText>내용관련</S.PostText>
         </S.PostBox>
       </S.Container>
     </div>

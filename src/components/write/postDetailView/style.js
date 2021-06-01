@@ -67,6 +67,7 @@ export const TagText = styled.div`
 `
 
 export const Img = styled.img`
+  width: 100%;
   background-size: cover;
 `
 
