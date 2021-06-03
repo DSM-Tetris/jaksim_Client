@@ -158,6 +158,7 @@ export const TagBox = styled.div`
 export const Tag = styled.div`
   display: flex;
   margin-right: 10px;
+  color: #555555;
 `
 
 export const Thumbnail = styled.div`

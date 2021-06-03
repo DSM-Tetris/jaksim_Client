@@ -18,6 +18,7 @@ const Write = ({data}) => {
             data && data.posts.map((d)=>(
               <PostItem
                 key={d.id}
+                id={d.id}
                 title={d.title}
                 image={d.image}
                 tags={d.tags}

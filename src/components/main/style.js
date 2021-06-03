@@ -129,7 +129,7 @@ export const BatteryInner = styled.div`
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background-color: white;
+  background-color: #ebfff1;
   clip-path: circle();
 `
 
