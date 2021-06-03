@@ -4,26 +4,69 @@ export const GET_POSTS = gql`
   query GetPosts($page: Int!, $categoryId: Int) {
     getPosts(data: {page: $page, categoryId: $categoryId}) {
       ... on GetPosts {
-        __typename
+        message
         posts {
+          id
+					title
+	        contentPreview
+	        image
+	        tags {
+						tagName
+	        }
+	      }
+      }
+      ... on BadRequest {
+        message
+      }
+      ... on Unauthorized {
+        message
+      }
+      ... on NotFoundAnyPost {
+        message
+      }
+    }
+  }
+`
+
+export const GET_POST = gql`
+  query GetPost($postId: Float!) {
+    getPost(postId: $postId) {
+      ... on GetPost {
+        message
+        post {
+          id
           title
-          contentPreview
+          content
           image
+          createdAt
           tags {
             tagName
           }
         }
       }
-      ... on Unauthorized {
-        __typename  
-        message
-      }
       ... on BadRequest {
-        __typename
         message
       }
-      ... on NotFoundAnyPost {
-        __typename
+      ... on Unauthorized {
+        message
+      }
+      ... on ForbiddenPost {
+        message
+      }
+      ... on NotFoundPost {
+        message
+      }
+    }
+  }
+`
+
+export const GET_PERCENTAGE_OF_BATTERY = gql`
+  query {getPercentageOfBattery {
+      ... on GetPercentageOfBattery {
+        percentageOfBattery,
+        message
+      }
+      ... on Unauthorized {
         message
       }
     }

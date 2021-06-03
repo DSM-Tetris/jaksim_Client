@@ -96,6 +96,7 @@ export const CategorySetting = styled.div`
 export const TagBox = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   position: absolute;
   top: 150px;
   left: 75%;
@@ -105,14 +106,25 @@ export const TagBox = styled.div`
   border-radius: 10px;
   background: rgba(255,255,255,0.7);
 
-  ::after{
-    content:"오늘의 일지 작성하기";
+  ::before{
+    content: "태그 순위";
     position: absolute;
-    top: 103%;
-    width: 100%;
-    height: 4vh;
-    text-align: center;
-    font-size: 1.1vw;
-    color: #4A7A62;
+    top: -7%;
+    width: 100px;
+    height: 1.2rem;
+    font-size: 1.2rem;
+    color: #121212;
+    /* background-color: #a7101a; */
   }
+`
+
+export const Tags = styled.div`
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  width: 100%;
+  height: 2rem;
+  padding: 0 0.4rem;
+  margin-top: 0.3rem;
+  /* background-color: #f916a8; */
 `

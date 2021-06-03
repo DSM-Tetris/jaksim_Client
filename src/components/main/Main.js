@@ -3,35 +3,51 @@ import * as S from './style';
 import {useHistory} from 'react-router-dom';
 import {Background} from '../shareStyle';
 import Header from '../header/Header';
+import { GET_PERCENTAGE_OF_BATTERY } from '../../GraphQL/Queries';
+import { useQuery } from '@apollo/client';
 
 const Main = () => {
   const [isPost, setIsPost] = useState(false);
-  const [percent, setPercent] = useState(40);
+  const [percent, setPercent] = useState(0);
   const [convertPercent, setConvertPercent] = useState(0);
+
+  const token = localStorage.getItem("token");
 
   const history = useHistory();
 
-  useEffect(()=>{
-    const convertToPosition = (percent) => {
-      let p = percent;
-      if(percent <= 9) p = 66;
-      else if(percent <= 19) p = 60;
-      else if(percent <= 29) p = 55;
-      else if(percent <= 39) p = 44;
-      else if(percent <= 49) p = 33;
-      else if(percent <= 59) p = 22;
-      else if(percent <= 69) p = 6;
-      else if(percent <= 79) p = -5;
-      else if(percent <= 89) p = -10;
-      else if(percent <= 99) p = -15;
-      else p = -20;
-
-      setConvertPercent(p);
+  const {data} = useQuery(GET_PERCENTAGE_OF_BATTERY,{
+    context: {
+      headers: {
+        authorization: token ? `Bearer ${token}` : ""
+      }
     }
+  })
 
-    convertToPosition(percent);
-  },[percent])
+  const convertToPosition = (percent) => {
+    let p = percent;
+    if(percent <= 9) p = 66;
+    else if(percent <= 19) p = 60;
+    else if(percent <= 29) p = 55;
+    else if(percent <= 39) p = 44;
+    else if(percent <= 49) p = 33;
+    else if(percent <= 59) p = 22;
+    else if(percent <= 69) p = 6;
+    else if(percent <= 79) p = -5;
+    else if(percent <= 89) p = -10;
+    else if(percent <= 99) p = -15;
+    else p = -20;
 
+    setConvertPercent(p);
+  }
+
+  useEffect(()=>{
+    const token = localStorage.getItem("token");
+    if(!token){
+      history.push("/login");
+    }
+    setPercent(data && data.getPercentageOfBattery.percentageOfBattery);
+    convertToPosition(data && data.getPercentageOfBattery.percentageOfBattery);
+  },[data])
 
   return (
     <div>
@@ -57,6 +73,10 @@ const Main = () => {
           </S.TopInner>
           <S.PostBtn onClick={()=>history.push('/post')}>전체 글 보기</S.PostBtn>
         </S.TopBox>
+        <S.BottomBox>
+          <S.TextImg />
+          <S.Tree />
+        </S.BottomBox>
       </S.Container>
     </div>
   );

@@ -34,3 +34,19 @@ export const LOGIN = gql`
   }
 `
 
+export const UPLOAD_POST = gql`
+  mutation UploadPost($title: String! $content: String! $categoryId: Int $tagNames: [String!] $picture: Upload) {
+    uploadPost(data: {title: $title, content: $content, categoryId: $categoryId, tagNames: $tagNames},picture: $picture) {
+      __typename
+      ... on UploadPost {
+        message
+      }
+      ... on BadRequest {
+        message
+      }
+      ... on CategoryNotFound {
+        message
+      }
+    }
+  }
+`

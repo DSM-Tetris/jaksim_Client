@@ -21,7 +21,7 @@ export const PostBox = styled.div`
   border: 2px solid rgba(70,70,70,0.2);
   border-radius: 10px;
   background:#ffffff;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 
   ::-webkit-scrollbar {
       width: 5px;
@@ -55,6 +55,7 @@ export const TitleText = styled.div`
 `
 
 export const TagBox = styled.div`
+  display: flex;
   width: 100%;
   height: 25px;
   margin: 20px 0;
@@ -64,9 +65,11 @@ export const TagText = styled.div`
   font-size: 1.8vmin;
   font-family: 'paybooc-Medium';
   color: #869196;
+  margin-right: 10px;
 `
 
 export const Img = styled.img`
+  width: 100%;
   background-size: cover;
 `
 

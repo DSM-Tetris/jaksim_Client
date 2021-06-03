@@ -1,23 +1,29 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import {useQuery} from '@apollo/client';
 import Write from '../components/write/Write';
 import {GET_POSTS} from '../GraphQL/Queries';
 
 const PostContainer = () => {
-    let page = 1;
-    function hello() {
-      const {loading, error, data} = useQuery(GET_POSTS, {
-        variables: {page},
-        onCompleted: (data) => {
-          // console.log(data.getPosts.__typename);
-        }
-      });
-    }
+  const [a,setA] = useState({});
+  const token = localStorage.getItem("token");
 
-    hello();
+  const {loading, error, data} = useQuery(GET_POSTS, {
+    variables: {page: 1, categoryId: null},
+    context: {
+      headers: {
+        authorization: token ? `Bearer ${token}` : ""
+      },
+    },
+  });
+
+  useEffect(()=>{
+    if(data) {
+      setA(data.getPosts.__typename);
+    }
+  },[data]);
 
   return (
-    <Write />
+    <Write data={data && data.getPosts}/>
   );
 };
 
